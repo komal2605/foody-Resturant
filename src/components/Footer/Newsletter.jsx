@@ -14,7 +14,7 @@ const Newsletter = () => (
       <input
         type="email"
         name="email"
-        id="Email"
+        id="email"
         placeholder="Enter your e-mail"
       />
       <button className="custom__button">Subscribe</button>
