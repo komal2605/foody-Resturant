@@ -3,11 +3,14 @@ import { MdOutlineRestaurantMenu } from "react-icons/md";
 import { Link } from "react-scroll";
 
 import images from "../../constants/images";
+import { Form } from "../../container";
 
 import "./Navbar.css";
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState();
+  const [login, setLogin] = useState(false);
+  const [bookTable, setBookTable] = useState(false);
 
   return (
     <nav className="app__navbar">
@@ -43,19 +46,41 @@ const Navbar = () => {
         </li>
       </ul>
       <div className="app__navbar-login">
-        <a href="#login" className="p__opensans">
+        <a
+          href="#login"
+          className={login ? "login-active p__opensans" : "p__opensans"}
+          onClick={() => {
+            setLogin(!login);
+            setBookTable(false);
+          }}
+        >
           Log In/ Register
         </a>
         <div />
-        <a href="#login" className="p__opensans">
+        <a
+          href="#login"
+          className={bookTable ? "login-active p__opensans" : "p__opensans"}
+          onClick={() => {
+            setBookTable(!bookTable);
+            setLogin(false);
+          }}
+        >
           Book Table
         </a>
       </div>
+
+      {login && <Form show={"loginForm"} />}
+      {bookTable && <Form show={"dinning"} />}
+
       <div className="app__navbar-smallscreen">
         <MdOutlineRestaurantMenu
           color="var(--color-golden)"
           fontSize={27}
-          onClick={() => setToggleMenu(!toggleMenu)}
+          onClick={() => {
+            setToggleMenu(!toggleMenu);
+            setLogin(false);
+            setBookTable(false);
+          }}
         />
         {toggleMenu && (
           <div className="app__navbar-smallscreen_overlay flex__center slide-bottom">

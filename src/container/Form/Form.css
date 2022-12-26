@@ -1,0 +1,173 @@
+.app__book-table,
+.app__login-register {
+  width: 100%;
+  height: 90vh;
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+.app__book-table {
+  background-color: #181717c9;
+}
+.app__login-register {
+  background-color: #0c0c0cab;
+  color: var(--color-white);
+}
+.app__login-register .login {
+  background-color: #2d2c2cf2;
+}
+.app__book-table .app__book-table-div {
+  background-color: #5f5f5fd1;
+}
+.app__book-table .app__book-table-div,
+.app__login-register .login {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  border-radius: 16px;
+}
+.app__book-table .app__book-table-div .book-table,
+.app__login-register .login .form-content {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem 4rem;
+}
+.app__login-register .login .form-content p span {
+  color: var(--color-golden);
+  cursor: pointer;
+}
+.app__book-table .app__book-table-div .book-table h2,
+.app__login-register .login .form-content h2 {
+  color: var(--color-golden);
+  margin-bottom: 14px;
+}
+.app__book-table .app__book-table-div .book-table p,
+.app__login-register .login .form-content p {
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+}
+.app__book-table .app__book-table-div form,
+.app__login-register .login form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+/* --------- */
+.app__login-register .login form .inputs,
+.app__book-table .app__book-table-div form .inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.app__login-register .login form .inputs input,
+.app__book-table .app__book-table-div form .inputs input,
+.app__book-table .app__book-table-div form .inputs textarea {
+  width: 100%;
+}
+.app__book-table .app__book-table-div form .inputs {
+  position: relative;
+}
+.app__book-table .app__book-table-div form .inputs p {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 12px;
+  color: #a19f9fab;
+}
+/* --------- */
+.app__book-table .app__book-table-div img {
+  width: 40%;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+.app__login-register .login img {
+  width: 40%;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+}
+.app__book-table .app__book-table-div form input,
+.app__book-table .app__book-table-div form textarea,
+.app__login-register .login form input {
+  padding: 10px;
+}
+.app__book-table .app__book-table-div form input:hover,
+.app__login-register .login form input:hover {
+  background-color: #0000009e;
+}
+.app__login-register .login .form-content form span,
+.app__book-table .app__book-table-div form span {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: #e38627;
+  display: flex;
+}
+form textarea,
+form input {
+  background-color: #0c0c0cab;
+  outline: none;
+  border: 1px solid #0c0c0cab;
+  color: var(--color-grey);
+  caret-color: var(--color-golden);
+}
+.app__book-table .app__book-table-div form div {
+  width: 100%;
+  gap: 0.5rem;
+}
+.app__book-table .app__book-table-div form .sub-div inputs {
+  height: 52px;
+}
+::-ms-reveal {
+  filter: invert(1);
+}
+::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+@media screen and (max-width: 1000px) {
+  .app__book-table .app__book-table-div .book-table {
+    padding: 2rem;
+  }
+  .app__book-table .app__book-table-div,
+  .app__login-register .login {
+    gap: 0;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .app__book-table .app__book-table-div .book-table {
+    padding: 2rem;
+  }
+  .app__book-table .app__book-table-div .book-table,
+  .app__login-register .login .form-content {
+    padding: 3rem 2rem;
+  }
+  .app__book-table .app__book-table-div,
+  .app__login-register .login {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 750px) {
+  .app__book-table,
+  .app__login-register {
+    top: 60px;
+  }
+
+  .app__book-table .app__book-table-div img,
+  .app__login-register .login img {
+    display: none;
+  }
+  .app__book-table .app__book-table-div .book-table,
+  .app__login-register .login .form-content {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+  }
+  .app__book-table .app__book-table-div form .sub-div {
+    flex-wrap: wrap;
+  }
+}
