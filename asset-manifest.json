@@ -1,9 +1,11 @@
 {
   "files": {
-    "main.css": "/foody-resturant/static/css/main.99e3f121.css",
-    "main.js": "/foody-resturant/static/js/main.88d95aee.js",
+    "main.css": "/foody-resturant/static/css/main.f3f2b5f8.css",
+    "main.js": "/foody-resturant/static/js/main.d662428a.js",
     "static/media/meal.mp4": "/foody-resturant/static/media/meal.a1b6c6dc67dfa2f99343.mp4",
     "static/media/bg.png": "/foody-resturant/static/media/bg.3d421b1b5682e1b67deb.png",
+    "static/media/veganFood.jpg": "/foody-resturant/static/media/veganFood.7a67c9a3ff951b289bd3.jpg",
+    "static/media/dinning.jpg": "/foody-resturant/static/media/dinning.9e9d1d5e7c2d9b12cf88.jpg",
     "static/media/welcome.png": "/foody-resturant/static/media/welcome.d724eb984456d9c97470.png",
     "static/media/findus.png": "/foody-resturant/static/media/findus.585c393ccd3671513743.png",
     "static/media/laurels.png": "/foody-resturant/static/media/laurels.e760828692795d4aafd7.png",
@@ -25,11 +27,11 @@
     "static/media/sign.png": "/foody-resturant/static/media/sign.9bf0bd90ad4caa17991f.png",
     "index.html": "/foody-resturant/index.html",
     "static/media/spoon.svg": "/foody-resturant/static/media/spoon.d079f43fbcf509908d3865293080795a.svg",
-    "main.99e3f121.css.map": "/foody-resturant/static/css/main.99e3f121.css.map",
-    "main.88d95aee.js.map": "/foody-resturant/static/js/main.88d95aee.js.map"
+    "main.f3f2b5f8.css.map": "/foody-resturant/static/css/main.f3f2b5f8.css.map",
+    "main.d662428a.js.map": "/foody-resturant/static/js/main.d662428a.js.map"
   },
   "entrypoints": [
-    "static/css/main.99e3f121.css",
-    "static/js/main.88d95aee.js"
+    "static/css/main.f3f2b5f8.css",
+    "static/js/main.d662428a.js"
   ]
 }
