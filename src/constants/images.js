@@ -19,6 +19,8 @@ import award03 from "../assets/award03.png";
 import award05 from "../assets/award05.png";
 import sign from "../assets/sign.png";
 import quote from "../assets/quote.png";
+import veganFood from "../assets/veganFood.jpg";
+import dinning from "../assets/dinning.jpg";
 import foody from "../assets/foody.png";
 
 const images = {
@@ -42,6 +44,8 @@ const images = {
   award03,
   award05,
   sign,
+  veganFood,
+  dinning,
   quote,
   foody,
 };
