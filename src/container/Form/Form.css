@@ -120,6 +120,7 @@ form input {
 }
 .app__book-table .app__book-table-div form .sub-div inputs {
   height: 52px;
+  width: 50%;
 }
 ::-ms-reveal {
   filter: invert(1);
