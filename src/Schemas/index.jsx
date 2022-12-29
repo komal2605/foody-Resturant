@@ -20,7 +20,7 @@ const bookTableSchema = Yup.object({
   name: Yup.string().min(2).max(25).required("Please provide your fullname"),
   date: Yup.date().required("Please select date"),
   time: Yup.string().required("Please select time"),
-  contact: Yup.number().min(10).required("please provide your contact number"),
+  contact: Yup.number().required("please provide your contact number").min(10),
   details: Yup.string(),
 });
 

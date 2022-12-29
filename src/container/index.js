@@ -7,6 +7,7 @@ import Header from "./Header/Header";
 import Intro from "./Intro/Intro";
 import Laurels from "./Laurels/Laurels";
 import Form from "./Form/Form";
+import BookTable from "./Form/BookTable";
 import SpecialMenu from "./Menu/SpecialMenu";
 
 export {
@@ -19,5 +20,6 @@ export {
   Intro,
   Laurels,
   Form,
+  BookTable,
   SpecialMenu,
 };

@@ -3,7 +3,7 @@ import { MdOutlineRestaurantMenu } from "react-icons/md";
 import { Link } from "react-scroll";
 
 import images from "../../constants/images";
-import { Form } from "../../container";
+import { Form, BookTable } from "../../container";
 
 import "./Navbar.css";
 
@@ -69,8 +69,8 @@ const Navbar = () => {
         </a>
       </div>
 
-      {login && <Form show={"loginForm"} />}
-      {bookTable && <Form show={"dinning"} />}
+      {login && <Form />}
+      {bookTable && <BookTable />}
 
       <div className="app__navbar-smallscreen">
         <MdOutlineRestaurantMenu
