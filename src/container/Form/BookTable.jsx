@@ -47,7 +47,6 @@ const BookTable = () => {
                     type="text"
                     placeholder="Your name"
                     name="name"
-                    pattern="[A-Za-z]+"
                     value={values.name}
                     onChange={handleChange}
                     onBlur={handleBlur}
