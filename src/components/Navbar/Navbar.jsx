@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { MdOutlineRestaurantMenu } from "react-icons/md";
 import { Link } from "react-scroll";
-
 import images from "../../constants/images";
 import { Form, BookTable } from "../../container";
 

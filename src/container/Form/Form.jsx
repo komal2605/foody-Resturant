@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { images } from "../../constants";
 import { useFormik } from "formik";
 import { loginSchema, registerSchema } from "../../Schemas";
 import "./Form.css";
@@ -18,33 +17,9 @@ const initialValuesRegister = {
 };
 const Form = () => {
   const [submittedText, setSubmittedText] = useState(false);
-
   const [register, setRegister] = useState(true);
   const [username, setUsername] = useState("");
 
-  // for login-----
-  // const { values, errors, handleBlur, handleChange, handleSubmit, touched } =
-  //   useFormik({
-  //     initialValues:
-  //       props.show === "loginForm"
-  //         ? register
-  //           ? initialValuesRegister
-  //           : initialValuesLogin
-  //         : initialValuesBookTable,
-  //     validationSchema:
-  //       props.show === "loginForm"
-  //         ? register
-  //           ? registerSchema
-  //           : loginSchema
-  //         : bookTableSchema,
-  //     onSubmit: (values, action) => {
-  //       console.log("🚀 ~ file: Form.jsx:50 ~ Form ~ values", values);
-  //       action.resetForm();
-  //       setSubmittedText(true);
-  //       setTableBookedText(true);
-  //       setUsername(values.name);
-  //     },
-  //   });
   const loginFormik = useFormik({
     initialValues: initialValuesLogin,
     validationSchema: loginSchema,
@@ -69,20 +44,21 @@ const Form = () => {
   return (
     <>
       <div className="app__login-register flex__center ">
-        <div className="login">
-          <div className="form-content">
-            {submittedText ? (
-              <p
-                style={{
-                  color: "var(--color-golden)",
-                  textTransform: "capitalize",
-                  fontSize: "18px",
-                }}
-              >
-                welcome {username} !
-              </p>
-            ) : (
-              <>
+        {submittedText ? (
+          <p
+            className="submitted-text"
+            style={{
+              color: "var(--color-golden)",
+              textTransform: "capitalize",
+              fontSize: "18px",
+            }}
+          >
+            welcome {username} !
+          </p>
+        ) : (
+          <>
+            <div className="login">
+              <div className="form-content">
                 <h2 className="p__cormorant">
                   {register ? "Create New Account" : "Welcome back"}
                 </h2>
@@ -208,11 +184,11 @@ const Form = () => {
                     </button>
                   </form>
                 )}
-              </>
-            )}
-          </div>
-          <img src={images.veganFood} alt="form-login" />
-        </div>
+              </div>
+              <div className="loginRegister-img" />
+            </div>
+          </>
+        )}
       </div>
     </>
   );

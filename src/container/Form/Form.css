@@ -3,13 +3,23 @@
   width: 100%;
   height: 90vh;
   position: absolute;
-  top: 80px;
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
 }
 .app__book-table {
   background-color: var(--color-bg-black);
+}
+.app__book-table .app__book-table-div,
+.app__login-register .login {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  border-radius: 8px;
+}
+.app__book-table .app__book-table-div {
+  background-color: var(--color-bg-dinning);
 }
 .app__login-register {
   background-color: var(--color-bg-light);
@@ -18,42 +28,34 @@
 .app__login-register .login {
   background-color: var(--color-bg-login);
 }
-.app__book-table .app__book-table-div {
-  background-color: var(--color-bg-dinning);
-}
-.app__book-table .app__book-table-div,
-.app__login-register .login {
-  display: flex;
-  flex-direction: row;
-  width: 50%;
-  height: 70%;
-  border-radius: 8px;
-}
-.app__book-table .app__book-table-div .book-table,
+
+.app__book-table .app__book-table-div .book-table-content,
 .app__login-register .login .form-content {
   width: 60%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   padding: 3rem;
+  gap: 1rem;
 }
-.app__login-register .login .form-content p span {
-  color: var(--color-golden);
-  cursor: pointer;
+.app__book-table .app__book-table-div .book-table-img {
+  width: 40%;
+  background-image: url("../../assets/dinning.jpg");
+  background-size: cover;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
-.app__book-table .app__book-table-div .book-table h2,
-.app__login-register .login .form-content h2 {
-  color: var(--color-golden);
-  margin-bottom: 14px;
-}
-.app__book-table .app__book-table-div .book-table p,
-.app__login-register .login .form-content p {
-  font-size: 12px;
-  letter-spacing: 1px;
-  margin-bottom: 1.5rem;
+.app__login-register .login .loginRegister-img {
+  width: 40%;
+  background-image: url("../../assets/veganFood.jpg");
+  background-size: cover;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 .app__book-table .app__book-table-div form,
 .app__login-register .login form {
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -63,37 +65,47 @@
   display: flex;
   flex-direction: column;
 }
-
-.app__book-table .app__book-table-div form .inputs {
-  position: relative;
-  width: 100%;
+.sub-div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
-.app__book-table .app__book-table-div form div input {
-  width: 100%;
+.sub-div .inputs {
+  flex: 1;
 }
-.app__book-table .app__book-table-div form .inputs p {
-  position: absolute;
-  top: 13px;
-  right: 12px;
-  font-size: 17px;
-  color: #a19f9fab;
+.sub-div .inputs input {
+  height: 41px;
 }
-.app__book-table .app__book-table-div img {
-  width: 40%;
-  object-fit: cover;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
+.app__login-register .login .form-content p span {
+  color: var(--color-golden);
+  cursor: pointer;
 }
-.app__login-register .login img {
-  width: 40%;
-  object-fit: cover;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
+.app__book-table .app__book-table-div .book-table-content h2,
+.app__login-register .login .form-content h2 {
+  color: var(--color-golden);
 }
 .app__book-table .app__book-table-div form input,
 .app__book-table .app__book-table-div form textarea,
 .app__login-register .login form input {
   padding: 10px 8px;
+}
+.app__book-table .app__book-table-div .book-table p,
+.app__login-register .login .form-content p {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.app__book-table .app__book-table-div form .inputs {
+  position: relative;
+}
+.app__book-table .app__book-table-div form .inputs p {
+  position: absolute;
+  top: 12px;
+  right: 11px;
+  font-size: 18px;
+  color: #a19f9fab;
+}
+.react-datepicker-popper {
+  z-index: 9999 !important;
 }
 .app__book-table .app__book-table-div form input:hover,
 .app__login-register .login form input:hover {
@@ -115,50 +127,46 @@ form input {
   color: var(--color-grey);
   caret-color: var(--color-golden);
 }
-.app__book-table .app__book-table-div form .sub-div input {
-  height: 41px;
+.submitted-text {
+  color: var(--color-golden);
+  text-transform: capitalize;
+  font-size: 18px;
+  background-color: var(--color-bg-dinning);
+  padding: 3rem;
+  border-radius: 8px;
 }
-.app__book-table .app__book-table-div form .sub-div {
-  justify-content: space-between;
-  gap: 10px;
+.error-show {
+  display: flex;
 }
 ::-ms-reveal {
   filter: invert(1);
 }
 ::-webkit-calendar-picker-indicator {
+  /* filter: invert(1); */
   opacity: 0;
-  font-size: 20px;
+  font-size: 16px;
+  color: var(--color-grey);
 }
 
 @media screen and (max-width: 1160px) {
   .app__book-table .app__book-table-div,
   .app__login-register .login {
     width: 65%;
-    height: fit-content;
-  }
-  .app__book-table .app__book-table-div form .sub-div {
-    flex-wrap: wrap;
-    gap: 1rem;
   }
 }
-@media screen and (max-width: 750px) {
-  .app__book-table,
-  .app__login-register {
-    top: 60px;
-  }
+@media screen and (max-width: 770px) {
   .app__book-table .app__book-table-div,
   .app__login-register .login {
     width: 80%;
   }
-  .app__book-table .app__book-table-div img,
-  .app__login-register .login img {
+  .app__book-table .app__book-table-div .book-table-img,
+  .app__login-register .login .loginRegister-img {
     display: none;
   }
-  .app__book-table .app__book-table-div .book-table,
+  .app__book-table .app__book-table-div .book-table-content,
   .app__login-register .login .form-content {
     width: 100%;
-    display: flex;
-    text-align: center;
     flex-direction: column;
+    align-items: center;
   }
 }

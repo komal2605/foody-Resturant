@@ -1,4 +1,5 @@
 import * as Yup from "yup";
+const pattern = new RegExp(/^[0-9\b]+$/);
 
 const loginSchema = Yup.object({
   name: Yup.string().min(2).max(25).required("Please provide your fullname"),
@@ -20,7 +21,10 @@ const bookTableSchema = Yup.object({
   name: Yup.string().min(2).max(25).required("Please provide your fullname"),
   date: Yup.date().required("Please select date"),
   time: Yup.string().required("Please select time"),
-  contact: Yup.number().required("please provide your contact number").min(10),
+  contact: Yup.string()
+    .required("please provide your contact number")
+    .matches(pattern, "must have digits only")
+    .length(10, "must be 10 digits"),
   details: Yup.string(),
 });
 

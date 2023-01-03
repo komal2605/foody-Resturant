@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import "./Form.css";
 import { bookTableSchema } from "../../Schemas";
 import { BsCalendar2Date, BsClock } from "react-icons/bs";
-import { images } from "../../constants";
 import { useFormik } from "formik";
+import "./Form.css";
 
 const BookTable = () => {
   const [bookedText, setTableBookedText] = useState(false);
@@ -30,23 +29,17 @@ const BookTable = () => {
 
   return (
     <div className="app__book-table flex__center">
-      <div className="app__book-table-div">
-        <img src={images.dinning} alt="dinning" />
-        <div className="book-table">
-          {bookedText ? (
-            <p
-              style={{
-                color: "var(--color-golden)",
-                textTransform: "capitalize",
-                fontSize: "18px",
-              }}
-            >
-              Thank you {username},<br />
-              <br />
-              your table is booked !!
-            </p>
-          ) : (
-            <>
+      {bookedText ? (
+        <p className="submitted-text">
+          Thank you {username},<br />
+          <br />
+          your table is booked !!
+        </p>
+      ) : (
+        <>
+          <div className="app__book-table-div">
+            <div className="book-table-img" />
+            <div className="book-table-content">
               <h2 className="p__cormorant">Book your Dinning</h2>
               <form onSubmit={handleSubmit}>
                 <div className="inputs">
@@ -54,6 +47,7 @@ const BookTable = () => {
                     type="text"
                     placeholder="Your name"
                     name="name"
+                    pattern="[A-Za-z]+"
                     value={values.name}
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -75,7 +69,7 @@ const BookTable = () => {
                     <span>{errors.contact}</span>
                   ) : null}
                 </div>
-                <div className="flex__center sub-div">
+                <div className="sub-div">
                   <div className="inputs">
                     <p>
                       <BsCalendar2Date />
@@ -87,7 +81,6 @@ const BookTable = () => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                     />
-
                     {errors.date && touched.date ? (
                       <span>{errors.date}</span>
                     ) : null}
@@ -103,6 +96,7 @@ const BookTable = () => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                     />
+
                     {errors.time && touched.time ? (
                       <span>{errors.time}</span>
                     ) : null}
@@ -129,10 +123,10 @@ const BookTable = () => {
                   Book my Table
                 </button>
               </form>
-            </>
-          )}
-        </div>
-      </div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
