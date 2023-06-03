@@ -12,10 +12,12 @@ import {
   SpecialMenu,
 } from "./container";
 import { Navbar } from "./components";
+import HelmetComponent from "./Helmet/App";
 import "./App.css";
 
 const App = () => (
   <div>
+    <HelmetComponent />
     <Navbar />
     <Header />
     <AboutUs />
